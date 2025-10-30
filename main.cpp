@@ -184,12 +184,12 @@ cout<<"The number of occurances of 1: " << no1<<endl;
    end--;
   }
  }
- int xy;
- cin >> xy;
- int array007[xy];
+ int j;
+ cin >> j;
+ int array007[j];
 
- for (int i = 0; i < xy; i++) {
+ for (int i = 0; i < j; i++) {
   cin >> array007[i];
  }
 
- reverseArray(array007, 0, xy - 1);
+ reverseArray(array007, 0, j - 1);
