@@ -18,3 +18,4 @@ int n;
         cout << avgNumInArray(the_numbers, n);
 
 }
+int n
