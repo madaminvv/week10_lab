@@ -1,6 +1,42 @@
 #include <iostream>
 using namespace std;
 #include <ctime>
+//Problem9
+void reverseArray(int arr[], int start, int end) {
+ while (start < end) {
+  int temp = arr[start];
+  arr[start] = arr[end];
+  arr[end] = temp;
+  start++;
+  end--;
+ }
+}
+//Problem4
+int indexOfLargestElement(int array[], int size) {
+ int maxIndex = 0;
+ for (int i = 1; i < size; i++) {
+  if (array[i] >= array[maxIndex]) {
+   maxIndex = i;
+  }
+ }
+ return maxIndex;
+}
+//Problem5
+bool strictlyEqual(const int list1[],const int list2[],int size) {
+ for (int i = 0; i < size; i++) {
+  if (list1[i] != list2[i])
+   return false;
+ }
+ return true;
+}
+
+ //Problem3
+int minnum(int numbers[], int size) {
+ for(int i = 0; i < size; i++) {
+  if(numbers[i] < numbers[i+1])
+   return numbers[i];
+  }
+ }
 
 int main(){
 int n;
@@ -26,42 +62,27 @@ cout<<endl;
  cout<<"The sum of the numbers equals to: "<<sum<<endl;
 
  //Problem2
- int v, sum1=0;
- cin>>v;
+ int y, sum1=0;
+ cin>>y;
 
- int thenm1[v];
- for(int i=0;i<v;i++) {
+ int thenm1[y];
+ for(int i=0;i<y;i++) {
   cin>>thenm1[i];
   sum1+=thenm1[i];
  }
- double alph=sum1/v;
+ double alph=sum1/y;
  cout<<"The average of the numbers equals to: "<<alph<<endl;
 
  //Problem3
- int minnum(int numbers[], int size) {
-  for(int i = 0; i < size; i++) {
-   if(numbers[i] < numbers[i+1])
-    return numbers[i];
-  }
- }
- int b;
- cin >> b;
- int the_minnum[b];
- for(int i = 0; i < b; i++) {
+ int k;
+ cin >> k;
+ int the_minnum[k];
+ for(int i = 0; i < k; i++) {
   cin >> the_minnum[i];
  }
- cout <<"Minimum number is: "<< minnum(the_minnum, b);
+ cout <<"Minimum number is: "<< minnum(the_minnum, k);
 
  //Problem4
- int indexOfLargestElement(int array[], int size) {
-  int maxIndex = 0;
-  for (int i = 1; i < size; i++) {
-   if (array[i] >= array[maxIndex]) {
-    maxIndex = i;
-   }
-  }
-  return maxIndex;
- }
  const int SIZE = 15;
  int numbers[SIZE];
 
@@ -75,13 +96,6 @@ cout<<endl;
  cout << "The largest number is: " << numbers[index] << endl;
 
  //Problem5
- bool strictlyEqual(const int list1[],const int list2[],int size) {
-  for (int i = 0; i < size; i++) {
-   if (list1[i] != list2[i])
-    return false;
-  }
-  return true;
- }
  int size1;
  cin >> size1;
  int list1[100], list2[100];
@@ -129,17 +143,17 @@ cout<<endl;
   cout << "Special:" << special << endl;
 
  //Problem7
- int af;
+ int j;
  cout << "Enter the number of elements: ";
- cin >> af;
+ cin >> j;
 
- int arr1[af];
- cout << "Enter " << af << " integers: ";
- for (int i = 0; i < af; i++) {
+ int arr1[j];
+ cout << "Enter " << j << " integers: ";
+ for (int i = 0; i < j; i++) {
   cin >> arr1[i];
  }
- for (int i = 0; i < af - 1; i++) {
-  for (int j = i + 1; j < af; j++) {
+ for (int i = 0; i < j - 1; i++) {
+  for (int j = i + 1; j < j; j++) {
    if (arr1[j] < arr1[i]) {
 
     int temp = arr1[i];
@@ -175,21 +189,20 @@ cout<<"The number of occurances of 1: " << no1<<endl;
  cout<<"The number of occurances of 6: " << no6<<endl;
 
 //Problem9
- void reverseArray(int arr[], int start, int end) {
-  while (start < end) {
-   int temp = arr[start];
-   arr[start] = arr[end];
-   arr[end] = temp;
-   start++;
-   end--;
-  }
- }
- int j;
- cin >> j;
- int array007[j];
+ int af;
+ cin >> af;
+ int array007[af];
 
- for (int i = 0; i < j; i++) {
+ for (int i = 0; i < af; i++) {
   cin >> array007[i];
  }
 
- reverseArray(array007, 0, j - 1);
+ reverseArray(array007, 0, af - 1);
+ for (int i = 0; i < af; i++) {
+  cout << array007[i] << " ";
+ }
+
+
+
+ return 0;
+}
